@@ -18,7 +18,7 @@ Fake block<br>
 "AAA to BBB 200 coins, BBB to CCC 100 coins, CCC to DDD 50 coins, DDD to AAA 25 coins"<br>
 "AA to BBB 200 coins, BB to CC 100 coins, CC to DD 50 coins, DD to AA 25 coins"<br><br>
 
-Output:
+Output:<br>
 Block-0 valid<br>
 Block-1 valid<br>
 Block-2 valid<br>
