@@ -11,6 +11,16 @@ struct block {
   string transaction;
   string hash_now;
 };
+
+void generate_hash(string *hash_now,string *transaction){
+    *hash_now = sha256(*transaction);
+    return;
+}
+
+void saveto_nextblock(string *hash_before, string *hash_now){
+    *hash_before = *hash_now;
+    return;
+}
  
 int main(int argc, char *argv[])
 {
@@ -32,15 +42,14 @@ int main(int argc, char *argv[])
     }
     */
     
-    
-    //generate hash for current block and save the hash inside its own block
+    //generate hash for current block and save the hash the block
     for(i=0; i<=4; i++){
-        bloc[i].hash_now = sha256(bloc[i].transaction);
+        generate_hash(&bloc[i].hash_now, &bloc[i].transaction);
     }
     
     //save the hash to next block
     for(i=0; i<=4; i++){
-        bloc[i+1].hash_before = bloc[i].hash_now;
+        saveto_nextblock(&bloc[i+1].hash_before, &bloc[i].hash_now);
     }
     
     //check the validity
@@ -55,7 +64,7 @@ int main(int argc, char *argv[])
     
     cout << "\n\n";
     
-    //What will happen if fake transaction created
+    //What will happen if fake transaction records are created?
     fakebloc[0].transaction = "A to B 200 coins, B to C 100 coins, C to D 50 coins, D to A 25 coins";
     fakebloc[1].transaction = "D to E 200 coins, E to F 100 coins, F to G 50 coins, G to D 25 coins";
     fakebloc[2].transaction = "H to I 200 coins, I to J 133 coins, J to K 50 coins, K to L 25 coins"; //modified chain
@@ -63,17 +72,17 @@ int main(int argc, char *argv[])
     fakebloc[4].transaction = "AAA to BBB 200 coins, BBB to CCC 100 coins, CCC to DDD 50 coins, DDD to AAA 25 coins";
     fakebloc[5].transaction = "AA to BBB 200 coins, BB to CC 100 coins, CC to DD 50 coins, DD to AA 25 coins";
     
-    //generate hash for fake block and save the hash inside its own block
+    //generate hash for fake block and save the hash inside that fake block
     for(i=0; i<=4; i++){
-        fakebloc[i].hash_now = sha256(fakebloc[i].transaction);
+        generate_hash(&fakebloc[i].hash_now, &fakebloc[i].transaction);
     }
     
-    //save the hash to next fake block
+    //save the hash to the next fake block
     for(i=0; i<=4; i++){
-        fakebloc[i+1].hash_before = fakebloc[i].hash_now;
+        saveto_nextblock(&fakebloc[i+1].hash_before, &fakebloc[i].hash_now);
     }
     
-    //compare original block to fake block
+    //compare original block to the fake block
     for(i=0; i<=4; i++){
         if(bloc[i].hash_now == fakebloc[i].hash_now){
             cout << "Block-" << i << " valid" << "\n";
@@ -84,6 +93,5 @@ int main(int argc, char *argv[])
             break;
         }
     }
-    
     return 0;
 }
