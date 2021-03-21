@@ -30,5 +30,10 @@ Block-1 valid<br>
 Block-2 invalid<br>
 Rejected<br><br>
 
-<img src="https://www.researchgate.net/profile/Yahya_Shahsavari/publication/331639364/figure/fig2/AS:755068626276352@1557033797702/Blockchain-data-structure.ppm">
+<img src="https://www.researchgate.net/profile/Yahya_Shahsavari/publication/331639364/figure/fig2/AS:755068626276352@1557033797702/Blockchain-data-structure.ppm" style="  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;">
+<br>
+image source : https://www.researchgate.net/profile/Yahya_Shahsavari/publication/331639364/figure/fig2/AS:755068626276352@1557033797702/Blockchain-data-structure.ppm
 
