@@ -32,5 +32,5 @@ Rejected<br><br>
 
 <img src="https://www.researchgate.net/profile/Yahya_Shahsavari/publication/331639364/figure/fig2/AS:755068626276352@1557033797702/Blockchain-data-structure.ppm">
 <br>
-<p style="color:gray;">image source : https://www.researchgate.net/profile/Yahya_Shahsavari/publication/331639364/figure/fig2/AS:755068626276352@1557033797702/Blockchain-data-structure.ppm</p>
+image source : https://www.researchgate.net/profile/Yahya_Shahsavari/publication/331639364/figure/fig2/AS:755068626276352@1557033797702/Blockchain-data-structure.ppm
 
